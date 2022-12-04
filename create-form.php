@@ -1,8 +1,7 @@
 
-<?php 
-include("header.php");
-include("create.php");
-require_once("router.php");
+<?php
+include('header.php');
+require_once('create.php');
 ?>
     <section class="pt-5">
         <div class="row">
@@ -14,7 +13,7 @@ require_once("router.php");
             
 
                     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
-                    <?php set_csrf()?>
+                    <?php //set_csrf()?>
                         <div class="form-group">
                           <label for="name">Full Name</label>
                           <input name="name" type="text" class="form-control" id="name" placeholder="Enter Full Name">
@@ -50,7 +49,7 @@ require_once("router.php");
                             <input name="confirmpassword" type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
                           </div>
 
-                        <button type="submit" class="btn btn-primary btn-lg" onclick="return confirm('Are you sure, you want to register?');">Register</button>
+                        <button type="submit" class="btn btn-primary btn-lg" onclick="return confirm('Are you sure, you want to register?'); window.location='profile.php'">Register</button>
                       </form>
                   </div>
             </div>

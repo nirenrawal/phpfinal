@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
     <title>Register</title>
 </head>
 <body>
@@ -21,15 +23,29 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Create Profile</a>
-                <a class="nav-item nav-link" href="#">Login</a>
+              <?php if(!isset($_SESSION['email'])){ ?> 
+                  <a class="nav-item nav-link" href="home.php">Home</a><?php } ?>
+                  
+              <?php if(isset($_SESSION['email'])){ ?> 
+                  <a class="nav-item nav-link" href="create-form.php">Create Profile</a><?php } ?>
+                  <?php if(isset($_SESSION['email'])){ ?> 
+                    <a class="nav-item nav-link" href="login-form.php">Login</a><?php } ?>
+                    <?php if(!isset($_SESSION['email'])){ ?> 
+                      <a class="nav-item nav-link" href="logout.php">Logout</a><?php } ?>
+
+
                 
+                
+          
+                
+
               </div>
             </div>
-            <form class="form-inline my-2 my-lg-0">
-             
-              <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
-            </form>
+            
           </nav>
     </section>
+
+  
+ 
+            
+          
