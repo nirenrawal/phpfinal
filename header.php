@@ -23,20 +23,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-              <?php if(!isset($_SESSION['email'])){ ?> 
-                  <a class="nav-item nav-link" href="home.php">Home</a><?php } ?>
-                  
-              <?php if(isset($_SESSION['email'])){ ?> 
-                  <a class="nav-item nav-link" href="create-form.php">Create Profile</a><?php } ?>
-                  <?php if(isset($_SESSION['email'])){ ?> 
-                    <a class="nav-item nav-link" href="login-form.php">Login</a><?php } ?>
-                    <?php if(!isset($_SESSION['email'])){ ?> 
-                      <a class="nav-item nav-link" href="logout.php">Logout</a><?php } ?>
-
-
+              <a class="nav-item nav-link" href="create-form.php">Home</a>
+                <a class="nav-item nav-link" href="create-form.php">Create Profile</a>
+                <a class="nav-item nav-link" href="login-form.php">Login</a>
+                <a class="nav-item nav-link" href="create-form.php">Logout</a>
                 
-                
-          
                 
 
               </div>
@@ -47,5 +38,6 @@
 
   
  
-            
+            <?php //if(isset($_SESSION['email'])){ ?> 
+             <!-- <a href="logout.php">Logout</a><?php //} ?> -->
           
