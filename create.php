@@ -16,14 +16,14 @@ try {
         if($extension == 'JPEG' || $extension == 'jpeg' || $extension == 'GIF' || $extension == 'gif' || $extension == 'PNG' || $extension == 'png' || $extension == 'JPG' || $extension == 'jpg') {
             $user_type = '0';
             $hash_key = sha1(microtime());
-            $name = $_POST['name'];
-            $dob = $_POST['dob'];
-            $address = $_POST['address'];
-            $email = $_POST['email'];
-            $password = sha1($_POST['password']);
+            $name = htmlspecialchars( $_POST['name']);
+            $dob = htmlspecialchars($_POST['dob']);
+            $address = htmlspecialchars($_POST['address']);
+            $email = htmlspecialchars($_POST['email']);
+            $password = htmlspecialchars(sha1($_POST['password']));
             $picture = $file_id;
             $time = date('h:i A');
-            $date = date('d-m-Y');
+            $date = date('Y-m-d');
             $agent = $_SERVER['HTTP_USER_AGENT'];
             $ip = $_SERVER['REMOTE_ADDR'];
   
